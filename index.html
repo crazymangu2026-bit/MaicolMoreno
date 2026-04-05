@@ -1,1 +1,311 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maicol Moreno | Consultoría Independiente & Auditoría Rancagua</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-dark: #0a192f;
+            --gold-accent: #c5a059;
+            --bg-light: #f8fafc;
+            --white: #ffffff;
+            --text-main: #334155;
+            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.7;
+            color: var(--text-main);
+            background-color: var(--bg-light);
+            overflow-x: hidden;
+        }
+
+        nav {
+            background: rgba(10, 25, 47, 0.98);
+            padding: 1.2rem 8%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid var(--gold-accent);
+        }
+
+        .logo {
+            color: var(--white);
+            font-size: 1.6rem;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .logo span { color: var(--gold-accent); font-weight: bold; }
+
+        nav ul { display: flex; list-style: none; }
+
+        nav ul li a {
+            color: var(--white);
+            text-decoration: none;
+            margin-left: 2.5rem;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            transition: var(--transition);
+        }
+
+        nav ul li a:hover { color: var(--gold-accent); }
+
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(10, 25, 47, 0.8), rgba(10, 25, 47, 0.8)), 
+                        url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80&w=2000');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--white);
+            padding: 0 15%;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* CAMBIO AQUÍ: Etiqueta de especialidad más profesional */
+        .sii-tag {
+            background: var(--gold-accent);
+            color: var(--primary-dark);
+            padding: 6px 20px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            border-radius: 2px;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin-bottom: 2.5rem;
+        }
+
+        .cta-btn {
+            padding: 15px 40px;
+            background: transparent;
+            color: var(--gold-accent);
+            border: 2px solid var(--gold-accent);
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: var(--transition);
+        }
+
+        .cta-btn:hover {
+            background: var(--gold-accent);
+            color: var(--primary-dark);
+        }
+
+        section { padding: 100px 10%; }
+
+        .title-container { text-align: center; margin-bottom: 60px; }
+
+        .title-container h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            color: var(--primary-dark);
+        }
+
+        .underline {
+            width: 60px;
+            height: 4px;
+            background: var(--gold-accent);
+            margin: 15px auto;
+        }
+
+        .grid-services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--white);
+            padding: 45px;
+            border-radius: 5px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.05);
+            transition: var(--transition);
+            border-top: 5px solid var(--primary-dark);
+        }
+
+        .card:hover {
+            transform: translateY(-15px);
+            border-top: 5px solid var(--gold-accent);
+        }
+
+        .contact-box {
+            background: var(--primary-dark);
+            color: var(--white);
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .contact-info { padding: 60px; background: rgba(255,255,255,0.03); }
+
+        .contact-form { padding: 60px; }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            color: white;
+            border-radius: 4px;
+        }
+
+        .submit-btn {
+            background: var(--gold-accent);
+            color: var(--primary-dark);
+            padding: 15px 30px;
+            border: none;
+            width: 100%;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        footer {
+            background: #050c16;
+            color: #64748b;
+            text-align: center;
+            padding: 40px;
+        }
+
+        @media (max-width: 900px) {
+            .contact-box { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 2.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">MAICOL <span>MORENO</span></div>
+        <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#trayectoria">Trayectoria</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <header id="inicio" class="hero">
+        <div class="sii-tag">Consultor Tributario Independiente</div>
+        <h1>Maicol Moreno</h1>
+        <p>Experto en Auditoría Financiera y Normativa del SII. Decidí llevar mi experiencia institucional al mundo privado para defender los intereses de los contribuyentes en Rancagua.</p>
+        <a href="#contacto" class="cta-btn">Solicitar Asesoría</a>
+    </header>
+
+    <section id="servicios">
+        <div class="title-container">
+            <h2>Especialidades</h2>
+            <div class="underline"></div>
+        </div>
+        <div class="grid-services">
+            <div class="card">
+                <h3>Defensa Tributaria</h3>
+                <p>Protejo su negocio ante procesos de fiscalización, citaciones y auditorías, aplicando el conocimiento real de cómo opera el sistema por dentro.</p>
+            </div>
+            <div class="card">
+                <h3>Contabilidad Integral</h3>
+                <p>Gestión de balances, flujos de caja y estados financieros con un estándar de excelencia y transparencia total.</p>
+            </div>
+            <div class="card">
+                <h3>Optimización Renta</h3>
+                <p>Planificación tributaria inteligente para asegurar que pague lo justo, aprovechando todos los beneficios legales vigentes.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="trayectoria" style="background: linear-gradient(135deg, #edf2f7 0%, #cbd5e1 100%);">
+        <div class="title-container">
+            <h2>Mi Camino hacia la Independencia</h2>
+            <div class="underline"></div>
+        </div>
+        <div style="max-width: 950px; margin: 0 auto;">
+            <div style="background: white; padding: 50px; border-radius: 15px; box-shadow: 0 20px 50px rgba(0,0,0,0.1); border-left: 10px solid var(--gold-accent);">
+                <p style="font-size: 1.4rem; color: #1e293b; line-height: 1.8; font-style: italic;">
+                    "Durante años serví en el <strong>Servicio de Impuestos Internos</strong>, donde aprendí cada engranaje del sistema tributario chileno. Sin embargo, sentí la necesidad de dar un paso más allá. <br><br>
+                    <strong>Renuncié voluntariamente</strong> para fundar mi propia consultoría en Rancagua, con una misión clara: usar toda esa experiencia institucional para empoderar al contribuyente. Hoy, como independiente, tengo la libertad de trabajar codo a codo con pymes y profesionales, ofreciendo una defensa técnica que pocos pueden igualar."
+                </p>
+                <div style="margin-top: 30px; font-weight: bold; color: var(--primary-dark); font-size: 1.1rem; text-align: right;">
+                    — MAICOL MORENO <br> <span style="color: var(--gold-accent); font-size: 0.9rem;">Contador Auditor & Consultor Estratégico</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto">
+        <div class="contact-box">
+            <div class="contact-info">
+                <h3>Contacto Directo</h3>
+                <p style="margin-top: 30px;">📍 Rancagua, Región de O'Higgins</p>
+                <p style="margin-top: 15px;">📧 contacto@maicolmoreno.cl</p>
+                <p style="margin-top: 15px;">💼 Asesoría Personalizada</p>
+            </div>
+            <div class="contact-form">
+                <form id="maicolForm">
+                    <div class="form-group">
+                        <input type="text" placeholder="Su Nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Correo Electrónico" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea rows="4" placeholder="Cuénteme sobre su situación tributaria o contable..." required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">ENVIAR CONSULTA</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Maicol Moreno Consultores - Rancagua, Chile.</p>
+    </footer>
+
+    <script>
+        document.getElementById('maicolForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const btn = this.querySelector('button');
+            btn.innerText = 'ENVIANDO...';
+            setTimeout(() => {
+                alert('¡Gracias! Su mensaje ha sido enviado. Maicol Moreno revisará su caso personalmente.');
+                this.reset();
+                btn.innerText = 'ENVIAR CONSULTA';
+            }, 1200);
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
 
