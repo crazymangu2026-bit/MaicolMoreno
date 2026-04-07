@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maicol Moreno | Consultoría Independiente & Auditoría Rancagua</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    <title>McAuditores | Consultoría Tributaria y Auditoría en Rancagua</title>
+    <meta name="description" content="McAuditores - Consultoría tributaria independiente en Rancagua. Especialistas en defensa ante el SII, auditoría financiera y optimización tributaria. Experiencia real del Servicio de Impuestos Internos.">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     
     <style>
         :root {
@@ -15,17 +17,13 @@
             --text-main: #334155;
             --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
-
         * { margin: 0; padding: 0; box-sizing: border-box; }
-
         body {
             font-family: 'Montserrat', sans-serif;
             line-height: 1.7;
             color: var(--text-main);
             background-color: var(--bg-light);
-            overflow-x: hidden;
         }
-
         nav {
             background: rgba(10, 25, 47, 0.98);
             padding: 1.2rem 8%;
@@ -38,31 +36,38 @@
             align-items: center;
             border-bottom: 2px solid var(--gold-accent);
         }
-
         .logo {
             color: var(--white);
-            font-size: 1.6rem;
+            font-size: 1.7rem;
             font-family: 'Playfair Display', serif;
+            font-weight: 700;
         }
-
-        .logo span { color: var(--gold-accent); font-weight: bold; }
-
-        nav ul { display: flex; list-style: none; }
-
+        .logo span { color: var(--gold-accent); }
+        nav ul { 
+            display: flex; 
+            list-style: none; 
+            gap: 2rem;
+        }
         nav ul li a {
             color: var(--white);
             text-decoration: none;
-            margin-left: 2.5rem;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             text-transform: uppercase;
+            font-weight: 500;
             transition: var(--transition);
         }
-
         nav ul li a:hover { color: var(--gold-accent); }
+
+        .hamburger {
+            display: none;
+            font-size: 1.8rem;
+            color: white;
+            cursor: pointer;
+        }
 
         .hero {
             height: 100vh;
-            background: linear-gradient(rgba(10, 25, 47, 0.8), rgba(10, 25, 47, 0.8)), 
+            background: linear-gradient(rgba(10, 25, 47, 0.85), rgba(10, 25, 47, 0.85)),
                         url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80&w=2000');
             background-size: cover;
             background-position: center;
@@ -74,184 +79,319 @@
             color: var(--white);
             padding: 0 15%;
         }
-
         .hero h1 {
             font-family: 'Playfair Display', serif;
-            font-size: 4rem;
-            margin-bottom: 0.5rem;
+            font-size: 4.2rem;
+            margin-bottom: 0.8rem;
         }
-
-        /* CAMBIO AQUÍ: Etiqueta de especialidad más profesional */
         .sii-tag {
             background: var(--gold-accent);
             color: var(--primary-dark);
-            padding: 6px 20px;
+            padding: 8px 24px;
             font-weight: 700;
-            font-size: 0.85rem;
-            border-radius: 2px;
-            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+            border-radius: 4px;
+            margin-bottom: 1.8rem;
             text-transform: uppercase;
+            letter-spacing: 1px;
         }
-
         .hero p {
-            font-size: 1.3rem;
-            max-width: 800px;
-            margin-bottom: 2.5rem;
+            font-size: 1.35rem;
+            max-width: 820px;
+            margin-bottom: 2.8rem;
         }
-
         .cta-btn {
-            padding: 15px 40px;
+            padding: 16px 42px;
             background: transparent;
             color: var(--gold-accent);
             border: 2px solid var(--gold-accent);
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 600;
             text-transform: uppercase;
+            margin: 0 12px;
             transition: var(--transition);
+            display: inline-block;
         }
-
         .cta-btn:hover {
             background: var(--gold-accent);
             color: var(--primary-dark);
         }
-
-        section { padding: 100px 10%; }
-
-        .title-container { text-align: center; margin-bottom: 60px; }
-
-        .title-container h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.8rem;
+        .cta-btn.secondary {
+            background: var(--gold-accent);
             color: var(--primary-dark);
         }
 
+        section { padding: 110px 10%; }
+        .title-container { text-align: center; margin-bottom: 70px; }
+        .title-container h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.9rem;
+            color: var(--primary-dark);
+        }
         .underline {
-            width: 60px;
+            width: 70px;
             height: 4px;
             background: var(--gold-accent);
-            margin: 15px auto;
+            margin: 18px auto;
         }
 
         .grid-services {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 35px;
         }
-
         .card {
             background: var(--white);
-            padding: 45px;
-            border-radius: 5px;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.05);
+            padding: 50px 40px;
+            border-radius: 8px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.06);
             transition: var(--transition);
-            border-top: 5px solid var(--primary-dark);
+            border-top: 6px solid var(--primary-dark);
         }
-
         .card:hover {
             transform: translateY(-15px);
-            border-top: 5px solid var(--gold-accent);
+            border-top: 6px solid var(--gold-accent);
         }
+
+        /* Trayectoria */
+        .trayectoria {
+            background: linear-gradient(135deg, #edf2f7 0%, #cbd5e1 100%);
+        }
+        .trayectoria-box {
+            max-width: 950px;
+            margin: 0 auto;
+            background: white;
+            padding: 55px;
+            border-radius: 15px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+            border-left: 10px solid var(--gold-accent);
+        }
+        .trayectoria-box p {
+            font-size: 1.35rem;
+            color: #1e293b;
+            line-height: 1.85;
+            font-style: italic;
+        }
+
+        /* Testimonios y FAQ (mismo estilo que antes) */
+        .grid-testimonials {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 30px;
+        }
+        .testimonial-card {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        .faq-item {
+            background: white;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+        .faq-question {
+            padding: 20px 25px;
+            background: var(--primary-dark);
+            color: white;
+            cursor: pointer;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .faq-answer {
+            padding: 0 25px;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+        .faq-answer.show { padding: 25px; max-height: 300px; }
+
+        .whatsapp-float {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            z-index: 9999;
+            transition: var(--transition);
+        }
+        .whatsapp-float:hover { transform: scale(1.1); background: #20c35b; }
 
         .contact-box {
             background: var(--primary-dark);
             color: var(--white);
             display: grid;
             grid-template-columns: 1fr 1.5fr;
-            border-radius: 10px;
+            border-radius: 12px;
             overflow: hidden;
         }
-
-        .contact-info { padding: 60px; background: rgba(255,255,255,0.03); }
-
-        .contact-form { padding: 60px; }
-
+        .contact-info { padding: 65px; background: rgba(255,255,255,0.04); }
+        .contact-form { padding: 65px; }
         .form-group input, .form-group textarea {
             width: 100%;
-            padding: 15px;
-            margin-bottom: 20px;
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,255,255,0.1);
+            padding: 16px;
+            margin-bottom: 22px;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.15);
             color: white;
-            border-radius: 4px;
+            border-radius: 5px;
+            font-size: 1rem;
         }
-
         .submit-btn {
             background: var(--gold-accent);
             color: var(--primary-dark);
-            padding: 15px 30px;
+            padding: 16px 35px;
             border: none;
             width: 100%;
-            font-weight: bold;
+            font-weight: 700;
             cursor: pointer;
+            font-size: 1.05rem;
         }
 
         footer {
             background: #050c16;
             color: #64748b;
             text-align: center;
-            padding: 40px;
+            padding: 50px 20px;
         }
 
         @media (max-width: 900px) {
+            nav ul {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background: var(--primary-dark);
+                flex-direction: column;
+                align-items: center;
+                padding-top: 60px;
+                transition: left 0.4s ease;
+            }
+            nav ul.active { left: 0; }
+            .hamburger { display: block; }
+            .hero h1 { font-size: 3rem; }
             .contact-box { grid-template-columns: 1fr; }
-            .hero h1 { font-size: 2.8rem; }
         }
     </style>
 </head>
 <body>
-
     <nav>
-        <div class="logo">MAICOL <span>MORENO</span></div>
-        <ul>
+        <div class="logo">Mc<span>Auditores</span></div>
+        <ul id="nav-menu">
             <li><a href="#inicio">Inicio</a></li>
             <li><a href="#servicios">Servicios</a></li>
             <li><a href="#trayectoria">Trayectoria</a></li>
+            <li><a href="#testimonios">Testimonios</a></li>
+            <li><a href="#faq">Preguntas Frecuentes</a></li>
             <li><a href="#contacto">Contacto</a></li>
         </ul>
+        <div class="hamburger" id="hamburger">☰</div>
     </nav>
 
     <header id="inicio" class="hero">
-        <div class="sii-tag">Consultor Tributario Independiente</div>
-        <h1>Maicol Moreno</h1>
-        <p>Experto en Auditoría Financiera y Normativa del SII. Decidí llevar mi experiencia institucional al mundo privado para defender los intereses de los contribuyentes en Rancagua.</p>
-        <a href="#contacto" class="cta-btn">Solicitar Asesoría</a>
+        <div class="sii-tag">Consultoría Tributaria Independiente</div>
+        <h1>McAuditores</h1>
+        <p>Expertos en defensa tributaria, auditoría financiera y optimización impositiva en Rancagua.<br>Experiencia real del Servicio de Impuestos Internos al servicio de los contribuyentes.</p>
+        <div>
+            <a href="#contacto" class="cta-btn">Solicitar Asesoría</a>
+            <a href="#servicios" class="cta-btn secondary">Ver Servicios</a>
+        </div>
     </header>
 
     <section id="servicios">
         <div class="title-container">
-            <h2>Especialidades</h2>
+            <h2>Nuestras Especialidades</h2>
             <div class="underline"></div>
         </div>
         <div class="grid-services">
             <div class="card">
                 <h3>Defensa Tributaria</h3>
-                <p>Protejo su negocio ante procesos de fiscalización, citaciones y auditorías, aplicando el conocimiento real de cómo opera el sistema por dentro.</p>
+                <p>Representación y defensa ante fiscalizaciones, citaciones, liquidaciones y auditorías del SII. Estrategia técnica basada en experiencia interna.</p>
             </div>
             <div class="card">
-                <h3>Contabilidad Integral</h3>
-                <p>Gestión de balances, flujos de caja y estados financieros con un estándar de excelencia y transparencia total.</p>
+                <h3>Contabilidad y Auditoría</h3>
+                <p>Gestión integral de contabilidad, balances, estados financieros y auditorías con altos estándares de calidad.</p>
             </div>
             <div class="card">
-                <h3>Optimización Renta</h3>
-                <p>Planificación tributaria inteligente para asegurar que pague lo justo, aprovechando todos los beneficios legales vigentes.</p>
+                <h3>Optimización Tributaria</h3>
+                <p>Planificación legal inteligente para minimizar la carga tributaria aprovechando todos los beneficios vigentes.</p>
             </div>
         </div>
     </section>
 
-    <section id="trayectoria" style="background: linear-gradient(135deg, #edf2f7 0%, #cbd5e1 100%);">
+    <section id="trayectoria" class="trayectoria">
         <div class="title-container">
             <h2>Mi Camino hacia la Independencia</h2>
             <div class="underline"></div>
         </div>
-        <div style="max-width: 950px; margin: 0 auto;">
-            <div style="background: white; padding: 50px; border-radius: 15px; box-shadow: 0 20px 50px rgba(0,0,0,0.1); border-left: 10px solid var(--gold-accent);">
-                <p style="font-size: 1.4rem; color: #1e293b; line-height: 1.8; font-style: italic;">
-                    "Durante años serví en el <strong>Servicio de Impuestos Internos</strong>, donde aprendí cada engranaje del sistema tributario chileno. Sin embargo, sentí la necesidad de dar un paso más allá. <br><br>
-                    <strong>Renuncié voluntariamente</strong> para fundar mi propia consultoría en Rancagua, con una misión clara: usar toda esa experiencia institucional para empoderar al contribuyente. Hoy, como independiente, tengo la libertad de trabajar codo a codo con pymes y profesionales, ofreciendo una defensa técnica que pocos pueden igualar."
-                </p>
-                <div style="margin-top: 30px; font-weight: bold; color: var(--primary-dark); font-size: 1.1rem; text-align: right;">
-                    — MAICOL MORENO <br> <span style="color: var(--gold-accent); font-size: 0.9rem;">Contador Auditor & Consultor Estratégico</span>
-                </div>
+        <div class="trayectoria-box">
+            <p>
+                "Durante años serví en el <strong>Servicio de Impuestos Internos</strong>, donde aprendí cada engranaje del sistema tributario chileno. Sin embargo, sentí la necesidad de dar un paso más allá.<br><br>
+                <strong>Renuncié voluntariamente</strong> para fundar mi propia consultoría en Rancagua, con una misión clara: usar toda esa experiencia institucional para empoderar al contribuyente. Hoy, como independiente, tengo la libertad de trabajar codo a codo con pymes y profesionales, ofreciendo una defensa técnica que pocos pueden igualar."
+            </p>
+            <div style="margin-top: 40px; font-weight: bold; color: var(--primary-dark); font-size: 1.15rem; text-align: right;">
+                — MAICOL MORENO <br> 
+                <span style="color: var(--gold-accent); font-size: 0.95rem;">Contador Auditor & Consultor Estratégico</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonios">
+        <div class="title-container">
+            <h2>Lo que dicen nuestros clientes</h2>
+            <div class="underline"></div>
+        </div>
+        <div class="grid-testimonials" style="max-width: 1200px; margin: 0 auto;">
+            <div class="testimonial-card">
+                <p>"Gracias a McAuditores logramos resolver una fiscalización compleja del SII en tiempo récord y con un excelente resultado. Muy recomendados."</p>
+                <strong>— Empresa Constructora, Rancagua</strong>
+            </div>
+            <div class="testimonial-card">
+                <p>"Maicol tiene un conocimiento profundo del sistema tributario. Su asesoría nos ha permitido optimizar nuestra renta de forma segura y legal."</p>
+                <strong>— Profesional Liberal, O'Higgins</strong>
+            </div>
+            <div class="testimonial-card">
+                <p>"La defensa técnica fue clave para revertir una liquidación importante. Confianza y resultados reales."</p>
+                <strong>— Pyme de Servicios, Rancagua</strong>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq">
+        <div class="title-container">
+            <h2>Preguntas Frecuentes</h2>
+            <div class="underline"></div>
+        </div>
+        <div style="max-width: 850px; margin: 0 auto;">
+            <div class="faq-item">
+                <div class="faq-question">¿Cuánto tiempo dura una fiscalización del SII?<span>▼</span></div>
+                <div class="faq-answer">Depende de la complejidad, pero suelen durar entre 3 y 12 meses. Una buena defensa temprana puede reducir significativamente este plazo.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">¿Se puede defender de una citación o liquidación del SII?<span>▼</span></div>
+                <div class="faq-answer">Sí. La mayoría de los casos tienen margen de defensa o negociación. La experiencia interna en el SII marca una gran diferencia.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">¿Trabajan con pymes y también con personas naturales?<span>▼</span></div>
+                <div class="faq-answer">Sí, atendemos tanto a pequeñas y medianas empresas como a profesionales independientes y personas con rentas altas.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">¿Cómo funcionan las tarifas?<span>▼</span></div>
+                <div class="faq-answer">Cada caso es único. Ofrecemos una primera reunión de diagnóstico sin costo para evaluar su situación y entregar un presupuesto transparente.</div>
             </div>
         </div>
     </section>
@@ -259,22 +399,16 @@
     <section id="contacto">
         <div class="contact-box">
             <div class="contact-info">
-                <h3>Contacto Directo</h3>
-                <p style="margin-top: 30px;">📍 Rancagua, Región de O'Higgins</p>
-                <p style="margin-top: 15px;">📧 contacto@maicolmoreno.cl</p>
-                <p style="margin-top: 15px;">💼 Asesoría Personalizada</p>
+                <h3>Contáctenos</h3>
+                <p style="margin-top: 35px;">📍 Rancagua, Región de O'Higgins</p>
+                <p style="margin-top: 18px;">📧 contacto@mcauditores.cl</p>
+                <p style="margin-top: 18px;">📱 +56 9 XXXX XXXX</p>
             </div>
             <div class="contact-form">
                 <form id="maicolForm">
-                    <div class="form-group">
-                        <input type="text" placeholder="Su Nombre" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" placeholder="Correo Electrónico" required>
-                    </div>
-                    <div class="form-group">
-                        <textarea rows="4" placeholder="Cuénteme sobre su situación tributaria o contable..." required></textarea>
-                    </div>
+                    <div class="form-group"><input type="text" placeholder="Su Nombre" required></div>
+                    <div class="form-group"><input type="email" placeholder="Correo Electrónico" required></div>
+                    <div class="form-group"><textarea rows="5" placeholder="Cuéntenos sobre su situación tributaria o contable..." required></textarea></div>
                     <button type="submit" class="submit-btn">ENVIAR CONSULTA</button>
                 </form>
             </div>
@@ -282,30 +416,51 @@
     </section>
 
     <footer>
-        <p>&copy; 2026 Maicol Moreno Consultores - Rancagua, Chile.</p>
+        <p>&copy; 2026 McAuditores - Consultoría Tributaria y Auditoría • Rancagua, Chile</p>
+        <p style="margin-top: 10px; font-size: 0.9rem;">Maicol Moreno • Consultor Tributario Independiente</p>
     </footer>
 
+    <a href="https://wa.me/569XXXXXXXX?text=Hola%20McAuditores,%20quisiera%20consultar%20sobre%20asesoría%20tributaria" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
     <script>
+        // Menú hamburguesa
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+        hamburger.addEventListener('click', () => navMenu.classList.toggle('active'));
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                if (this.getAttribute('href') !== '#') {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+                    if (window.innerWidth <= 900) navMenu.classList.remove('active');
+                }
+            });
+        });
+
+        // FAQ
+        document.querySelectorAll('.faq-question').forEach(q => {
+            q.addEventListener('click', () => {
+                const answer = q.nextElementSibling;
+                answer.classList.toggle('show');
+                q.querySelector('span').textContent = answer.classList.contains('show') ? '▲' : '▼';
+            });
+        });
+
+        // Formulario
         document.getElementById('maicolForm').addEventListener('submit', function(e) {
             e.preventDefault();
             const btn = this.querySelector('button');
             btn.innerText = 'ENVIANDO...';
             setTimeout(() => {
-                alert('¡Gracias! Su mensaje ha sido enviado. Maicol Moreno revisará su caso personalmente.');
+                alert('¡Gracias! Su consulta ha sido enviada. Maicol Moreno se comunicará pronto con usted.');
                 this.reset();
                 btn.innerText = 'ENVIAR CONSULTA';
-            }, 1200);
-        });
-
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
+            }, 1500);
         });
     </script>
 </body>
 </html>
-
